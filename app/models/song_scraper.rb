@@ -12,8 +12,8 @@ class SongScraper
       song = Song.new.tap{|s| s.name = song_name}
       genre = Genre.find_by_name(genre_name) || Genre.new.tap{|g| g.name = genre_name}
 
-      song.genre = genre
       artist.add_song(song)
+      genre.add_song(song)
 
       artist.save
       genre.save

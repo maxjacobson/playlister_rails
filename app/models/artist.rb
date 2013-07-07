@@ -7,5 +7,6 @@ class Artist < ActiveRecord::Base
   def add_song(song)
     @songs << song
     song.artist_id = self.id
+    song.artist = self.name
   end
 end
