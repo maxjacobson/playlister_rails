@@ -14,7 +14,6 @@ class GenresController < ApplicationController
   # GET /genres/1.json
   def show
     @genre = Genre.find(params[:id])
-    @songs = Song.where(genre_id: @genre.id)
 
     respond_to do |format|
       format.html # show.html.erb

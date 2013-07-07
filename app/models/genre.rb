@@ -1,10 +1,12 @@
 class Genre < ActiveRecord::Base
   attr_accessible :name
-  attr_accessor :songs
-  def add_song(song)
-    song.genre_id = self.id
-    song.genre = self.name
-    @songs ||= []
-    @songs << song
+
+  def songs
+    Song.where(genre_id: self.id)
   end
+
+  def artists
+    self.songs.collect{|song| song.artist}.uniq
+  end
+
 end

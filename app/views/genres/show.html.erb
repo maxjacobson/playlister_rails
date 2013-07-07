@@ -8,13 +8,22 @@
 <h2>Songs of this genre:</h2>
 
 <ul>
-  <% @songs.each do |song| %>
+  <% @genre.songs.each do |song| %>
     <li>
       <%= link_to song.name, song %>
     </li>
   <% end %>
 </ul>
 
+<h2>Artists in this genre:</h2>
+
+<ul>
+  <% @genre.artists.each do |artist| %>
+    <li>
+      <%= link_to artist.name, artist %>
+    </li>
+  <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_genre_path(@genre) %> |
 <%= link_to 'Back', genres_path %>

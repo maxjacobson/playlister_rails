@@ -9,9 +9,19 @@
 <h2>Songs by this artist:</h2>
 
 <ul>
-  <% @songs.each do |song| %>
+  <% @artist.songs.each do |song| %>
     <li>
       <%= link_to song.name, song %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Genres for this artist:</h2>
+
+<ul>
+  <% @artist.genres.each do |genre| %>
+    <li>
+      <%= link_to genre.name, genre %>
     </li>
   <% end %>
 </ul>
