@@ -14,6 +14,8 @@ class SongsController < ApplicationController
   # GET /songs/1.json
   def show
     @song = Song.find(params[:id])
+    @artist = Artist.find(@song.artist_id)
+    @genre = Genre.find(@song.genre_id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -40,6 +42,7 @@ class SongsController < ApplicationController
   # POST /songs
   # POST /songs.json
   def create
+    raise params.inspect
     @song = Song.new(params[:song])
 
     respond_to do |format|

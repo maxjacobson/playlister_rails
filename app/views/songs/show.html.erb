@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= raw @song.embedcode %>
+
 <p>
   <b>Name:</b>
   <%= @song.name %>
@@ -7,14 +9,13 @@
 
 <p>
   <b>Genre:</b>
-  <%= @song.genre_id %>
+  <%= link_to @genre.name, @genre %>
 </p>
 
 <p>
   <b>Artist:</b>
-  <%= @song.artist_id %>
+  <%= link_to @artist.name, @artist %>
 </p>
-
 
 <%= link_to 'Edit', edit_song_path(@song) %> |
 <%= link_to 'Back', songs_path %>

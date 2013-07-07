@@ -14,6 +14,7 @@ class ArtistsController < ApplicationController
   # GET /artists/1.json
   def show
     @artist = Artist.find(params[:id])
+    @songs = Song.where(artist_id: @artist.id)
 
     respond_to do |format|
       format.html # show.html.erb

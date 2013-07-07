@@ -1,4 +1,6 @@
 # playlister_rails
 
-I think I 100% screwed up. can't create new instances of my models
+## todo
 
+* get youtube embeds working
+* make sure new song works
