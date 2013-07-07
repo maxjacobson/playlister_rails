@@ -9,9 +9,9 @@ class SongScraper
       genre_name = filename.split(" - ")[1].split(/\[|\]/)[1]
 
       artist = Artist.find_by_name(artist_name) || Artist.create(name: artist_name)
-      song = Song.create(name: song_name)
       genre = Genre.find_by_name(genre_name) || Genre.create(name: genre_name)
-
+      song = Song.create(name: song_name)
+      
       song.add_artist(artist)
       song.add_genre(genre)
       song.save
