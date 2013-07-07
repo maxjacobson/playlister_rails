@@ -5,8 +5,8 @@ class Artist < ActiveRecord::Base
     @songs = []
   end
   def add_song(song)
-    @songs << song
     song.artist_id = self.id
     song.artist = self.name
+    @songs << song
   end
 end
