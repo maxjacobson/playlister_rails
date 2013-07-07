@@ -1,7 +1,7 @@
 class SongScraper
 
   def whee!
-    songs = Dir.entries("db/data").delete_if{|str| str[0] == "."}
+    songs = Dir.entries("db/songs_data").delete_if{|str| str[0] == "."}
     songs.each do |filename|
 
       artist_name = filename.split(" - ")[0]
