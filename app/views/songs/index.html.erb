@@ -13,8 +13,8 @@
 <% @songs.each do |song| %>
   <tr>
     <td><%= song.name %></td>
-    <td><%= song.genre_id %></td>
-    <td><%= song.artist_id %></td>
+    <td><%= Genre.find(song.genre_id).name %></td>
+    <td><%= Artist.find(song.artist_id).name %></td>
     <td><%= link_to 'Show', song %></td>
     <td><%= link_to 'Edit', edit_song_path(song) %></td>
     <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
