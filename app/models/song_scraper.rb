@@ -12,8 +12,6 @@ class SongScraper
       genre = Genre.find_by_name(genre_name) || Genre.create(name: genre_name)
       song = Song.create(name: song_name)
 
-      #song.artist = artist
-      #song.genre = genre
       song.add_artist(artist)
       song.add_genre(genre)
       song.save
