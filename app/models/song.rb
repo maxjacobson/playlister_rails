@@ -25,11 +25,19 @@ class Song < ActiveRecord::Base
   end
 
   def artist
-    Artist.find(self.artist_id)
+    if self.artist_id.nil?
+      Artist.new
+    else
+      Artist.find(self.artist_id)
+    end
   end
 
   def genre
-    Genre.find(self.genre_id)
+    if self.genre_id.nil?
+      Genre.new
+    else
+      Genre.find(self.genre_id)
+    end
   end
 
   # why are these two methods here?
